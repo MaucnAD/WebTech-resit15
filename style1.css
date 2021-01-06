@@ -1,0 +1,29 @@
+table, th, td {
+    border: 3px groove black;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+}
+
+tr:hover {
+    background-color: lightgray;
+}
+
+#apple {
+    color: red;
+}
+
+#banana {
+    color: goldenrod;
+}
+
+#orange {
+    color: orange;
+}
+
+#resptable {
+    overflow-x: auto;
+}
