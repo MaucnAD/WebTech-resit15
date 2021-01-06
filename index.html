@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Grocery webshop</title>
+
+<body>
+    <h1>Grocery webshop</h1>
+    <section>
+    <table>
+        <caption><strong><em>Available products</em></strong></caption>
+        <tr>
+            <h2><th>Product</th></h2>
+            <th>Origin</th>
+            <th>Best before</th>
+            <th>Amount</th>
+            <th>Image</th>
+        </tr>
+        <tr>
+            <td><strong>Apples</strong></td>
+            <td>Netherlands</td>
+            <td><pre>april 2021</pre></td>
+            <td><select>
+                <option value = "select1">1</option>
+                <option value = "select2">2</option>
+                <option value = "select3">3</option>
+                <option value = "select4">4</option>
+                <option value = "select5">5</option>
+            </select></td>
+            <td><figure></figure><figcaption>Apples</figcaption>
+                <img src="https://www.applesfromny.com/wp-content/uploads/2020/05/Rome_NYAS-Apples2.png" alt="Apples" height=50></figure></td>
+        </tr>
+        <tr>
+            <td><strong>Oranges</strong></td>
+            <td>Afrika</td>
+            <td><pre>april 2021</pre></td>
+            <td><select>
+                <option value = "select1">1</option>
+                <option value = "select2">2</option>
+                <option value = "select3">3</option>
+                <option value = "select4">4</option>
+                <option value = "select5">5</option>
+            </select></td>    
+            <td><figure></figure><figcaption>Oranges</figcaption>
+                <img src="https://www.freepngimg.com/download/orange/6-2-orange-transparent.png" alt="Oranges" height=50></td>
+        </tr>
+            <td><strong>Lemons</strong></td>
+            <td>Spain</td>
+            <td><pre>april 2021</pre></td>
+            <td><select>
+                <option value = "select1">1</option>
+                <option value = "select2">2</option>
+                <option value = "select3">3</option>
+                <option value = "select4">4</option>
+                <option value = "select5">5</option>
+            </select></td>
+            <td><figure></figure><figcaption>Lemons</figcaption>
+                <img src="https://pngimg.com/uploads/lemon/lemon_PNG25180.png" alt="Lemons" height=50></td>
+        <tr>
+        
+        <td><input type="text" name="product" id="product" placeholder="Name of product" required></td>
+        <td><input type="text" name="origin" id="origin" placeholder="Country" required></td>
+        <td><input type="text" name="best_before_date" id="best_before_date" placeholder="Date" required></td>
+        <td><input type="text" name="amount" id="amount" placeholder="Number of products" required></td>
+        <td><input type="text" name="image" id="image" placeholder="Link to image"></td>   
+        </tr>
+    </table>
+    <form action="https://wt.ops.labs.vu.nl/api21/254bdb30" method="post"></form>
+    <input type="submit">
+    </form>     
+    </section>
+</body>
+</html>
+
