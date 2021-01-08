@@ -19,7 +19,7 @@ table {
     border-width: 2px;
     caption-side: top;
     background: inherit;
-    font: Verdana 10px inherit;
+    font: inherit;
 }
 
 #table1 {
@@ -35,7 +35,7 @@ th, td {
 }
 
 ol {
-    list-style-type: upper-roman inside;
+    list-style-type: upper-roman;
 }
 
 div > ol, ul, dl {
@@ -154,7 +154,7 @@ a:link {
 }
 
 a:visited {
-    color: rgb(66, 66, 66);
+    color: rgb(8, 176, 182);
 }
 
 abbr {
