@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+      content="
+        height = device-height ,
+        width = device-width,
+        initial-scale=1,
+        user-scalable = no">
+
   <link href="style1.css" rel="stylesheet">
 
   <title>A Beautiful Webshop</title>
+  </head>
+
   <body>
     <form action="https://wt.ops.labs.vu.nl/api21/f07acf46" target="_blank" method="POST">
-      <caption><h1><strong>FRUITMARKET WEBSHOP</strong></h1></caption>
-    <div id="resptable">
+    <div class="intro">
+      <h1><strong>FRUITMARKET WEBSHOP</strong></h1>
+      <nav class="navi">
+        <a href="index1.html">Home</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="aboutus.html">About us</a>
+      </nav>
+      <p>
+        Welcome to the Fruitmarket webshop! Here you can find only the best fruit available in your region. Delivered to you freshly and cold, and within 24 hours of ordering!
+      </p>
+      <pre>
+        Disclaimer:     All our food is <abbr title="European Food Safety Authority">EFSA</abbr> approved.
+      </pre>
+    </div>
+    <div>
     <table>
+      <caption>Delicious Fresh Fruit</caption>
       <thead>
       <tr>
         <th>Product</th>
@@ -20,25 +44,56 @@
       </thead>
       <tbody>
       <tr>
-        <td id="apple"><em>Apple</em></td>
+        <td><p id="apple" class="fruit">Apples</p>
+          <ul>
+            <li>High in potassium</li>
+            <li>Great fruit for desserts</li>
+            <li>For a balanced diet</li>
+          </ul></td>
         <td>The Netherlands</td>
         <td>22-01-21</td>
-        <td>200</td>
-        <td><img src="https://newenglandapples.files.wordpress.com/2014/10/img_5595.jpg" alt="Picture of Apples" width="200" height="200"></td>
+        <td>100-200</td>
+        <td>
+        <figure>
+          <img src="https://newenglandapples.files.wordpress.com/2014/10/img_5595.jpg" alt="Picture of Apples" width="200" height="200">
+          <figcaption>Delicious Apples from The Netherlands</figcaption>
+        </figure>
+        </td>
       </tr>
       <tr>
-        <td id="banana"><em>Banana</em></td>
+        <td><p id="banana" class="fruit">Bananas</p>
+          <ul>
+            <li>High in potassium</li>
+            <li>Never really goes old</li>
+            <li><a href="https://en.wikipedia.org/wiki/Banana#/media/File:Inside_a_wild-type_banana.jpg" target="_blank">This</a> is what a wild banana looks like</li>
+          </ul></td>
         <td>Brazil</td>
         <td>14-01-21</td>
-        <td>184</td>
-        <td><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.oOTNyhF8R2FAlg9C3BK78wHaFj%26pid%3DApi&f=1" alt="Fresh Bananas" width="200" height="200"> </td>
+        <td>100-200</td>
+        <td>
+          <figure>
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.oOTNyhF8R2FAlg9C3BK78wHaFj%26pid%3DApi&f=1" alt="Fresh Bananas" width="200" height="200">
+            <figcaption>Bananas from the rainforests of Brazil</figcaption>
+          </figure>
+        </td>
       </tr>
       <tr>
-        <td id="orange"><em>Orange</em></td>
+        <td><p id="orange" class="fruit">Oranges</p>
+          <ul>
+            <li>High in vitamin C</li>
+            <li>Nice for some adult beverages</li>
+            <li>Was used to cure scurvy in the days of the pirates</li>
+          </ul>
+        </td>
         <td>Spain</td>
         <td>20-01-21</td>
-        <td>312</td>
-        <td><img src="https://furrytips.com/wp-content/uploads/2017/08/Can-Horses-Eat-Oranges-2.jpg" alt="Oranges" width="200" height="200"></td>
+        <td>&gt;300</td>
+        <td>
+          <figure>
+            <img src="https://www.kombuwholefoods.com.au/wp-content/uploads/2017/06/oranges-foto.jpg" alt="Oranges" width="200" height="200">
+            <figcaption>Oranges from only the best farms</figcaption>
+          </figure>
+        </td>
       </tr>
       <tr>
         <td>
@@ -55,11 +110,11 @@
         </td>
         <td>
           <select name="amount" id="amount">
-            <option value="<50"><50</option>
+            <option value="<50">&lt;50</option>
             <option value="50-100">50-100</option>
             <option value="100-200">100-200</option>
             <option value="200-300">200-300</option>
-            <option value=">300">>300</option>
+            <option value=">300">&gt;300</option>
           </select>
         </td>
         <td>
@@ -70,8 +125,39 @@
       </tbody>
     </table>
     </div>
-    <input type="submit">
+    <input type="submit" value="Submit">
     </form>
+    <div class="list">
+    <h2>Highest Sellers</h2>
+    <ol>
+      <li>Bananas</li>
+      <li>Apples</li>
+      <li>Oranges</li>
+    </ol>
+    </div>
+    <div class="list">
+    <dl>
+      <dt id="recipes"><strong>Recipes</strong></dt>
+      <dt>Apples</dt>
+      <dd><a href="https://www.bbc.co.uk/food/recipes/applesauce_1310" target="_blank">Apple Sauce</a></dd>
+      <dd><a href="https://www.yummly.com/recipe/Dutch-Apple-Pie-9024427?prm-v1" target="_blank">Apple Pie</a></dd>
+      <dt>Bananas</dt>
+      <dd><a href="https://www.yummly.com/recipe/The-best-ever-banana-cake-369280?prm-v1" target="_blank">Banana Cake</a></dd>
+      <dd><a href="https://www.tastingtable.com/cook/recipes/peanut-butter-bacon-grilled-cheese-elvis-sandwich-recipe" target="_blank">Famous Elvis Grilled PB Sandwich</a></dd>
+      <dt>Oranges</dt>
+      <dd><a href="https://foodnetwork.co.uk/recipes/orange-marmalade/?utm_source=foodnetwork.com&utm_medium=domestic">Orange Marmalade</a></dd>
+      <dd><a href="https://www.austria.info/en/things-to-do/food-and-drink/recipes/gluehwein">Gl&uuml;hwein</a></dd>
+    </dl>
+    </div>
+    <table>
+      <tr>
+        <th>Extra</th>
+        <th>table</th>
+        <th>for</th>
+        <th>Assignment</th>
+        <th>two</th>
+      </tr>
+    </table>
   </body>
 
 </html>
