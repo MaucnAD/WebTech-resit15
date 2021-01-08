@@ -1,0 +1,171 @@
+@media print {
+    div {page-break-before: auto;}
+    div {page-break-after: auto;}
+}
+
+h1 {
+    text-align:center;
+    color: black;
+    font-size: 50px;
+    background-image: url(https://wallpapercave.com/wp/wp3203373.jpg);
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2, h3, h4 {
+    text-transform: capitalize;
+}
+
+table, th, td {
+    text-align: center;
+}
+
+img {
+    vertical-align: baseline;
+}
+
+table {
+    width: 100%;
+    border-style:groove;
+    border-color: black;
+    border-spacing: 0px;
+    border-width: 2px;
+    caption-side: top;
+    background: inherit;
+    font: Verdana 10px inherit;
+}
+
+#table1 {
+    margin-top: 20px;
+}
+
+#table2 {
+    margin-top:40px;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 15px;
+}
+
+ol {
+    list-style-type: upper-roman inside;
+}
+
+div > ol, ul, dl {
+    list-style-position: inside;
+}
+
+ul {
+    list-style-image: url("http://pixeljoint.com/pixels/images/smile/pie/clap.gif");
+}
+
+body {
+    background-image: url("https://vikilike.com/wp-content/uploads/imgp/light-blue-lamps-5-5321.jpg");
+    background-repeat: repeat-y;
+    margin: 0;
+    text-indent: 0px;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+input[type="submit"] {
+    background-color: black;
+    color: white;
+}
+
+input[type="submit"]:hover {
+    background-color: red;
+}
+
+input[type="reset"] {
+    background-color: black;
+    color: white;
+}
+
+input[type="reset"]:hover {
+    background-color: red;
+}
+
+.navbutton {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+
+}
+
+nav {
+    background-color: black;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+div {
+    margin: 20px;
+    text-transform: inherit;
+    font-family: Arial, Helvetica, sans-serif;
+    orphans: 2;
+    widows: 2;
+}
+
+dt {
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+figcaption {
+    font-variant: small-caps;
+    text-align: center;
+}
+
+#award {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a:visited {
+    color: rgb(66, 66, 66);
+}
+
+a:active {
+    background-color: blue;
+}
+
+a:hover {
+    background-color: red;
+    color: white;
+}
+
+a:link {
+    color: purple;
+}
+
+abbr {
+    text-decoration: underline;
+}
+
+input:focus {
+    background-color: rgb(90, 2, 2);
+}
+
+#choice {
+    float: right;
+    height: 70px;
+    vertical-align: baseline;
+}
+
+footer {
+    text-align: center;
+}
+
+caption {
+    font-size: 25px;
+}
