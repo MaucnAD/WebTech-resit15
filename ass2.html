@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link href="style.css" rel="stylesheet" />
+        <title>Grocery webshop</title>
+    </head>
+    <body>
+        <h1>Grocery webshop</h1>
+        <nav>
+            <a class="navbutton" href="index.html">Home</a>
+            <a class="navbutton" href="https://en.wikipedia.org/wiki/Meat" target="_blank">Meat</a>
+            <a class="navbutton" href="https://en.wikipedia.org/wiki/Vegetable" target="_blank">Vegetables</a>
+            <a class="navbutton" href="https://en.wikipedia.org/wiki/Fruit" target="_blank">Fruit</a>
+            <a class="navbutton" href="https://en.wikipedia.org/wiki/Drink" target="_blank">Drinks</a>
+        </nav>
+        <section id="table1">
+            <table class="center">
+                <caption>
+                    <strong><em>Available fruits</em></strong>
+                </caption>
+                <tr>
+                    <th>Product</th>
+                    <th>Origin</th>
+                    <th>Best before</th>
+                    <th>Amount</th>
+                    <th>Image</th>
+                </tr>
+                <tr>
+                    <td><strong>Apples</strong></td>
+                    <td>Netherlands</td>
+                    <td>
+                        <pre>april 2021</pre>
+                    </td>
+                    <td>
+                        <select>
+                            <option value="select1">1</option>
+                            <option value="select2">2</option>
+                            <option value="select3">3</option>
+                            <option value="select4">4</option>
+                            <option value="select5">5</option>
+                        </select>
+                    </td>
+                    <td><img src="https://www.applesfromny.com/wp-content/uploads/2020/05/Rome_NYAS-Apples2.png" alt="Apples" height="50" /></td>
+                </tr>
+                <tr>
+                    <td><strong>Oranges</strong></td>
+                    <td>Africa</td>
+                    <td>
+                        <pre>april 2021</pre>
+                    </td>
+                    <td>
+                        <select>
+                            <option value="select1">1</option>
+                            <option value="select2">2</option>
+                            <option value="select3">3</option>
+                            <option value="select4">4</option>
+                            <option value="select5">5</option>
+                        </select>
+                    </td>
+                    <td><img src="https://www.freepngimg.com/download/orange/6-2-orange-transparent.png" alt="Oranges" height="50" /></td>
+                </tr>
+                <tr>
+                    <td><strong>Lemons</strong></td>
+                    <td>Spain</td>
+                    <td>
+                        <pre>april 2021</pre>
+                    </td>
+                    <td>
+                        <select>
+                            <option value="select1">1</option>
+                            <option value="select2">2</option>
+                            <option value="select3">3</option>
+                            <option value="select4">4</option>
+                            <option value="select5">5</option>
+                        </select>
+                    </td>
+                    <td><img src="https://pngimg.com/uploads/lemon/lemon_PNG25180.png" alt="Lemons" height="50" /></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="product" id="product" placeholder="Name of product" required /></td>
+                    <td><input type="text" name="origin" id="origin" placeholder="Country" required /></td>
+                    <td><input type="text" name="best_before_date" id="best_before_date" placeholder="Date" required /></td>
+                    <td><input type="text" name="amount" id="amount" placeholder="Number of products" required /></td>
+                    <td><input type="text" name="image" id="image" placeholder="Link to image" /></td>
+                </tr>
+            </table>
+            <form action="https://wt.ops.labs.vu.nl/api23/0e745e3a" method="post">
+                <input type="submit" name="submit" value="Submit" />
+                <input type="reset" value="Reset" />
+            </form>
+        </section>
+        <section id="table2">
+            <table class="center">
+                <caption>
+                    <strong><em>Available meat</em></strong>
+                </caption>
+                <tr>
+                    <th>Product</th>
+                    <th>Origin</th>
+                    <th>Best before</th>
+                    <th>Amount</th>
+                    <th>Image</th>
+                </tr>
+                <tr>
+                    <td><strong>Chicken wings</strong></td>
+                    <td>Netherlands</td>
+                    <td>
+                        <pre>February 2021</pre>
+                    </td>
+                    <td>
+                        <select>
+                            <option value="select1">1</option>
+                            <option value="select2">2</option>
+                            <option value="select3">3</option>
+                            <option value="select4">4</option>
+                            <option value="select5">5</option>
+                        </select>
+                    </td>
+                    <td><img src="https://healthynestnutrition.com/wp-content/uploads/2016/10/paleo-chicken-wings.jpg" alt="Apples" height="50" /></td>
+                </tr>
+                <tr>
+                    <td><strong>Beef</strong></td>
+                    <td>Spain</td>
+                    <td>
+                        <pre>March 2021</pre>
+                    </td>
+                    <td>
+                        <select>
+                            <option value="select1">1</option>
+                            <option value="select2">2</option>
+                            <option value="select3">3</option>
+                            <option value="select4">4</option>
+                            <option value="select5">5</option>
+                        </select>
+                    </td>
+                    <td><img src="https://img.taste.com.au/PyEJiQe2/w1200-h630-cfill/taste/2016/11/beef-cuts-52912-1.jpg" alt="Oranges" height="50" /></td>
+                </tr>
+                <tr>
+                    <td><strong>Pork</strong></td>
+                    <td>Portugal</td>
+                    <td>
+                        <pre>February 2021</pre>
+                    </td>
+                    <td>
+                        <select>
+                            <option value="select1">1</option>
+                            <option value="select2">2</option>
+                            <option value="select3">3</option>
+                            <option value="select4">4</option>
+                            <option value="select5">5</option>
+                        </select>
+                    </td>
+                    <td><img src="https://www.wikihow.com/images/1/1a/Smoke-Pork-Tenderloin-Final.jpg" alt="Lemons" height="50" /></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="product" id="product1" placeholder="Name of product" required /></td>
+                    <td><input type="text" name="origin" id="origin1" placeholder="Country" required /></td>
+                    <td><input type="text" name="best_before_date" id="best_before_date1" placeholder="Date" required /></td>
+                    <td><input type="text" name="amount" id="amount1" placeholder="Number of products" required /></td>
+                    <td><input type="text" name="image" id="image1" placeholder="Link to image" /></td>
+                </tr>
+            </table>
+            <form action="https://wt.ops.labs.vu.nl/api21/254bdb30" method="post">
+                <input type="submit" name="submit" value="Submit" />
+                <input type="reset" value="Reset" />
+            </form>
+        </section>
+        <section id="text1">
+            <div>
+                <h2>The most sold items of today are:</h2>
+                <ol>
+                    <li>Apples (89)</li>
+                    <li>Oranges (77)</li>
+                    <li>Lemons (34)</li>
+                </ol>
+                <h2>The highest rated items of today are:</h2>
+                <img src="https://www.activegarage.com/wordpress/wp-content/uploads/best-choice.jpg" id="choice" alt="best choice" />
+                <ul>
+                    <li>Oranges ★★★★★</li>
+                    <li>Lemons ★★★★</li>
+                    <li>Apples ★★★★</li>
+                </ul>
+                <h2>Vitamins in these products:</h2>
+                <dl>
+                    <dt>Apples:</dt>
+                    <dd>Vitamins: C and B complex</dd>
+                    <dd><a href="https://en.wikipedia.org/wiki/Apple" target="_blank">More info here</a></dd>
+                    <dt>Oranges:</dt>
+                    <dd>Vitamins: A, B1 and C</dd>
+                    <dd><a href="https://en.wikipedia.org/wiki/Orange_(fruit)" target="_blank">More info here</a></dd>
+                    <dt>Lemons:</dt>
+                    <dd>Vitamins: A and B5</dd>
+                    <dd><a href="https://en.wikipedia.org/wiki/Lemon" target="_blank">More info here</a></dd>
+                </dl>
+            </div>
+            <div>
+                <h2>Why choose for Grocery Webshop?</h2>
+                <p>
+                    In 2018 we won the <abbr title="Great Taste Award">GTA</abbr> award. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus libero nisl, ullamcorper ac lobortis vestibulum, viverra sit amet lectus. Aliquam
+                    finibus mauris dolor, at maximus urna pulvinar placerat. Praesent sem ipsum, volutpat quis imperdiet non, venenatis egestas risus. Nulla facilisi. Donec diam massa, imperdiet condimentum pretium at, viverra volutpat
+                    neque. Praesent sed porta ligula. Fusce id lorem eget turpis lacinia eleifend ut quis erat. Fusce interdum tellus nec tellus feugiat, sit amet condimentum diam bibendum.
+                </p>
+                <figure>
+                    <img src="https://supervalu.ie/image/var/files/about/latest-news/Great-Taste-2018.png" id="award" alt="Greate taste award 2018" height="100" />
+                    <figcaption>Great taste award 2018</figcaption>
+                </figure>
+            </div>
+        </section>
+        <footer>
+            <p>
+                Author: Jorg Ysenbout<br />
+                <a href="mailto:j.n.ysenbout@student.vu.nl">j.n.ysenbout@student.vu.nl</a>
+            </p>
+        </footer>
+    </body>
+    <!--To make sure the h1 and tables are responsive I made use of the property: width: 100%. This ensures that no matter how I change the screen they will fill 100% of the width.
+   I have tested on 3 browsers including: Brave, Chrome and Firefox. They site looks identical on all 3 browsers. There was one problem which we managed to solve with the TA.
+   The problem that the nav bar wouldn't scale all the way to the right of the screen while the rest did, we later figured out that the cause was that we used width 100% 
+   on the table, h1 and the navbar but used different padding values. We learned from this that the padding adds to the 100% meaning it won't all scale the same, we are glad the TA
+   helped us figure this out. After this we tested the print function to see how it would come out, and it looks fine, everything is in place but just without the styling. 
+   To come back to the constructs used, we only noticed 1 small difference between Firefox and Chrome/Brave, the border around the table looks different (style wise). 
+   It looks fine on both browsers, just a small difference where on Firefox you see 2 thin lines stacked around the table and on Chrome you see 1 thicker line.-->
+</html>
