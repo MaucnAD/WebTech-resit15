@@ -10,154 +10,104 @@
         user-scalable = no">
 
   <link href="style1.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="scripting_test.js" async></script>
 
-  <title>A Beautiful Webshop</title>
+  <title>Learn about Science!</title>
   </head>
 
   <body>
-    <form action="https://wt.ops.labs.vu.nl/api21/f07acf46" target="_blank" method="POST">
     <div class="intro">
-      <h1><strong>FRUITMARKET WEBSHOP</strong></h1>
+      <h1><strong>Notable Figures</strong></h1>
       <nav class="navi">
         <a href="index1.html">Home</a>
         <a href="reviews.html">Reviews</a>
         <a href="aboutus.html">About us</a>
       </nav>
       <p>
-        Welcome to the Fruitmarket webshop! Here you can find only the best fruit available in your region. Delivered to you freshly and cold, and within 24 hours of ordering!
+        On this page you can find a table of notable figures in the history of sciences.
       </p>
       <pre>
-        Disclaimer:     All our food is <abbr title="European Food Safety Authority">EFSA</abbr> approved.
+        Disclaimer: This page can be interacted with by users and does not have to be factually correct.
       </pre>
     </div>
-    <div>
+    <section id="table1" >
+     <!-- <button id="reset">Reset Table</button>-->
     <table>
-      <caption>Delicious Fresh Fruit</caption>
+      <caption>Notable Figures</caption>
       <thead>
       <tr>
-        <th>Product</th>
-        <th>Origin</th>
-        <th>Best Before Date</th>
-        <th>Amount</th>
+        <th onclick="sortTable(0, 0)">Author</th>
+        <th onclick="sortTable(1, 0)">Alt</th>
+        <th onclick="sortTable(2, 0)">Tags</th>
+        <th>Description</th>
         <th>Image</th>
       </tr>
       </thead>
-      <tbody>
-      <tr>
-        <td><p id="apple" class="fruit">Apples</p>
-          <ul>
-            <li>High in potassium</li>
-            <li>Great fruit for desserts</li>
-            <li>For a balanced diet</li>
-          </ul></td>
-        <td>The Netherlands</td>
-        <td>22-01-21</td>
-        <td>100-200</td>
-        <td>
-        <figure>
-          <img src="https://newenglandapples.files.wordpress.com/2014/10/img_5595.jpg" alt="Picture of Apples" width="200" height="200">
-          <figcaption>Delicious Apples from The Netherlands</figcaption>
-        </figure>
-        </td>
-      </tr>
-      <tr>
-        <td><p id="banana" class="fruit">Bananas</p>
-          <ul>
-            <li>High in potassium</li>
-            <li>Never really goes old</li>
-            <li><a href="https://en.wikipedia.org/wiki/Banana#/media/File:Inside_a_wild-type_banana.jpg" target="_blank">This</a> is what a wild banana looks like</li>
-          </ul></td>
-        <td>Brazil</td>
-        <td>14-01-21</td>
-        <td>100-200</td>
-        <td>
-          <figure>
-            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.oOTNyhF8R2FAlg9C3BK78wHaFj%26pid%3DApi&f=1" alt="Fresh Bananas" width="200" height="200">
-            <figcaption>Bananas from the rainforests of Brazil</figcaption>
-          </figure>
-        </td>
-      </tr>
-      <tr>
-        <td><p id="orange" class="fruit">Oranges</p>
-          <ul>
-            <li>High in vitamin C</li>
-            <li>Nice for some adult beverages</li>
-            <li>Was used to cure scurvy in the days of the pirates</li>
-          </ul>
-        </td>
-        <td>Spain</td>
-        <td>20-01-21</td>
-        <td>&gt;300</td>
-        <td>
-          <figure>
-            <img src="https://www.kombuwholefoods.com.au/wp-content/uploads/2017/06/oranges-foto.jpg" alt="Oranges" width="200" height="200">
-            <figcaption>Oranges from only the best farms</figcaption>
-          </figure>
-        </td>
-      </tr>
+      <tbody id="tableOne">
+      </tbody>
+      <form action="https://wt.ops.labs.vu.nl/api23/0e745e3a" method="post">
+      <tfoot>
       <tr>
         <td>
-          <label for="product"></label>
-          <input type="text" id="product" name="product" placeholder="e.g. Apples" required>
+          <label for="author"></label>
+          <input type="text" id="author" name="author" placeholder="e.g. Albert Einstein" required>
         </td>
         <td>
-          <label for="origin"></label>
-          <input type="text" id="origin" name="origin" placeholder="e.g. TheNetherlands" required>
+          <label for="alt"></label>
+          <input type="text" id="alt" name="alt" placeholder="e.g. An image of Albert Einstein" required>
         </td>
         <td>
-          <label for="best_before_date"></label>
-          <input type="text" id="best_before_date" name="best_before_date" placeholder="e.g. 05-01-21" required>
+          <label for="tags"></label>
+          <input type="text" id="tags" name="tags" placeholder="e.g. E=MC^2, physics" required>
         </td>
         <td>
-          <select name="amount" id="amount">
-            <option value="<50">&lt;50</option>
-            <option value="50-100">50-100</option>
-            <option value="100-200">100-200</option>
-            <option value="200-300">200-300</option>
-            <option value=">300">&gt;300</option>
-          </select>
+          <label for="description"></label>
+          <input type="text" id="description" name="description" placeholder="e.g. Long description Einstein" required>
         </td>
         <td>
           <label for="image"></label>
-          <input type="text" id="image" name="image" placeholder="Link of image">
+          <input type="text" id="image" name="image" placeholder="Link of image" required>
         </td>
       </tr>
-      </tbody>
+      </tfoot>
     </table>
-    </div>
-    <input type="submit" value="Submit">
+      <input type="submit" name="submit" value="Submit" />
+      <input type="reset" value="Reset" />
     </form>
-    <div class="list">
-    <h2>Highest Sellers</h2>
-    <ol>
-      <li>Bananas</li>
-      <li>Apples</li>
-      <li>Oranges</li>
-    </ol>
+    </section>
+    <!-- <button id="poster">Submit</button>-->
     </div>
-    <div class="list">
-    <dl>
-      <dt id="recipes"><strong>Recipes</strong></dt>
-      <dt>Apples</dt>
-      <dd><a href="https://www.bbc.co.uk/food/recipes/applesauce_1310" target="_blank">Apple Sauce</a></dd>
-      <dd><a href="https://www.yummly.com/recipe/Dutch-Apple-Pie-9024427?prm-v1" target="_blank">Apple Pie</a></dd>
-      <dt>Bananas</dt>
-      <dd><a href="https://www.yummly.com/recipe/The-best-ever-banana-cake-369280?prm-v1" target="_blank">Banana Cake</a></dd>
-      <dd><a href="https://www.tastingtable.com/cook/recipes/peanut-butter-bacon-grilled-cheese-elvis-sandwich-recipe" target="_blank">Famous Elvis Grilled PB Sandwich</a></dd>
-      <dt>Oranges</dt>
-      <dd><a href="https://foodnetwork.co.uk/recipes/orange-marmalade/?utm_source=foodnetwork.com&utm_medium=domestic">Orange Marmalade</a></dd>
-      <dd><a href="https://www.austria.info/en/things-to-do/food-and-drink/recipes/gluehwein">Gl&uuml;hwein</a></dd>
-    </dl>
-    </div>
-    <table>
-      <tr>
-        <th>Extra</th>
-        <th>table</th>
-        <th>for</th>
-        <th>Assignment</th>
-        <th>two</th>
-      </tr>
-    </table>
+        <section id="text1">
+            <div>
+                <h2>Some informative links</h2>
+                <ol>
+                  <li><a href="https://en.wikipedia.org/wiki/Albert_Einstein" >Albert Einstein</a></li>
+                  <li><a href="https://en.wikipedia.org/wiki/Marie_Curie" >Marie Curie</a></li>
+                  <li><a href="https://en.wikipedia.org/wiki/Alan_Turing" >Alan Turing</a></li>
+                </ol>
+                <ul>
+                    <li>Oranges ★★★★★</li>
+                    <li>Lemons ★★★★</li>
+                    <li>Apples ★★★★</li>
+                </ul>
+                <h2>Vitamins in these products:</h2>
+                <dl>
+                    <dt>Apples:</dt>
+                    <dd>Vitamins: C and B complex</dd>
+                    <dd><a href="https://en.wikipedia.org/wiki/Apple" target="_blank">More info here</a></dd>
+                    <dt>Oranges:</dt>
+                    <dd>Vitamins: A, B1 and C</dd>
+                    <dd><a href="https://en.wikipedia.org/wiki/Orange_(fruit)" target="_blank">More info here</a></dd>
+                    <dt>Lemons:</dt>
+                    <dd>Vitamins: A and B5</dd>
+                    <dd><a href="https://en.wikipedia.org/wiki/Lemon" target="_blank">More info here</a></dd>
+                </dl>
+                <figure>
+                <img src="https://www.mooc.org/hubfs/history.jpg" id="history" alt="Let's Learn!" />
+                <figcaption>Let's Learn!</figcaption>
+                </figure>
+            </div>
+        </section>
   </body>
-
 </html>

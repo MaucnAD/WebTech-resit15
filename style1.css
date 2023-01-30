@@ -26,7 +26,20 @@ body {
 }
 
 .navi {
-    text-decoration: underline;
+   margin-right: 10px;
+   margin-top: 5px;
+   text-decoration: underline;
+}
+ol {
+    list-style-type: upper-roman;
+}
+
+div > ol, ul, dl {
+    list-style-position: inside;
+}
+
+ul {
+    list-style-image: url("http://pixeljoint.com/pixels/images/smile/pie/clap.gif");
 }
 
 div.intro {
@@ -34,6 +47,8 @@ div.intro {
     font-variant: small-caps;
     text-decoration: overline;
     margin: 25px 25px 25px 25px;
+    orphans: 2;
+    widows: 2;
 }
 
 pre {
@@ -62,10 +77,12 @@ table {
     caption-side: top;
     overflow-x: auto;
     overflow-y: auto;
+    background: inherit;
 }
 
 ul {
     list-style: square outside;
+    vertical-align: baseline;
 }
 
 tr:hover {
@@ -77,10 +94,6 @@ tr:hover {
     float: left;
     columns: 300px;
     margin-left: 30px;
-}
-
-#recipes {
-    font-size: 24px;
 }
 
 input:focus {
@@ -99,16 +112,4 @@ a:active {
 
 a:visited {
     color: blue;
-}
-
-#apple {
-    color: red;
-}
-
-#banana {
-    color: goldenrod;
-}
-
-#orange {
-    color: orange;
 }
