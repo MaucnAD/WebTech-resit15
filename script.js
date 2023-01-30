@@ -41,6 +41,7 @@ function fetchDb(method, data) {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(data)});
+        break;
     case "post":
         fetch('http://localhost:3000/notable', {
             method: 'POST',
@@ -48,6 +49,7 @@ function fetchDb(method, data) {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(data)});
+        break;
     case "retrieve":
         var url = 'http://localhost:3000/notable/' + data.id.toString();
         fetch(url)
@@ -64,6 +66,7 @@ function fetchDb(method, data) {
                                       "<td>" + "<img src=\"" + table[0].image + "\"" + "alt= \"Image of " + table[0].author + "\" width = \"200px\" height = \"200px\">" + "</td>" + "</tr>"
                                      );
             });
+        break;
     case "delete":
         url = 'http://localhost:3000/delete-notable/' + data.id.toString();
         fetch(url, {
@@ -72,6 +75,7 @@ function fetchDb(method, data) {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(data)});
+        break;
     }
 }
 
