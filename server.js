@@ -1,9 +1,19 @@
+//I did part of the bonus, the data from the table is from our own database
+//and the submit button also submits to our own database. We unfortunately didn't
+//figure out how to use the other functions(from our own page). It is also no longer buggy when using our
+//own database, meaning that the fact that it worked like 50% of the time in assigment #2
+//was a database problem with the database provided by school.
+
 const sqlite = require('sqlite3').verbose();
-let db = my_database('./products.db');
+let db = my_database('./notable.db');
 
 // First, create an express application `app`:
 var express = require("express");
+var cors = require("cors");
 var app = express();
+
+// Use cors
+app.use(cors());
 
 // We need some middleware to parse JSON data in the body of our HTTP requests:
 var bodyParser = require("body-parser");
@@ -12,37 +22,37 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
+function errorMessage(err, res) {
+    res.status(err.status).json({
+        "error": res.message
+    });
+}
+
 // ###############################################################################
 // All GET functions here
 
-// Get list of 1 product in the database
-app.get('/productspecific', function(req, res) {
-    db.get(`SELECT * FROM products WHERE product=?`, [req.body.product], function(err, row) {
+function search(res, params) {
+    if(params != null) {
+        db.all(`SELECT * FROM notable WHERE id=?`, [params.id], function(err, rows) {
+            if (err) errorMessage(err, res);
+            res.json(rows);
+        });
+    }
+}
 
-        if (err) {
-            res.status(err.status).json({
-                "error": err.message
-            });
-            return;
-        }
-        return res.json(row);
-    });
+// Get list of 1 product in the database
+app.get('/notable/:id', function(req, res) {
+    search(res, req.params);
 });
 
 // Get list of all products in the database
-app.get('/products', function(req, res) {
-    db.all(`SELECT * FROM products`, function(err, rows) {
+app.get('/notable', function(req, res) {
+    db.all(`SELECT * FROM notable`, function(err, rows) {
 
-        if (err) {
-            res.status(err.status).json({
-                "error": err.message
-            });
-            return;
-        }
+        if (err) errorMessage(err, res);
         res.json({
-            "message": "success",
             "data": rows
-        })
+        });
     });
 });
 
@@ -50,82 +60,70 @@ app.get('/products', function(req, res) {
 // ###############################################################################
 // All POST functions here
 
-app.post('/products', function(req, res) {
+app.post('/notable', function(req, res) {
     var data = {
-        product: req.body.product,
-        origin: req.body.origin,
-        best_before_date: req.body.best_before_date,
-        amount: req.body.amount,
+        author: req.body.author,
+        alt: req.body.alt,
+        tags: req.body.tags,
+        description: req.body.description,
         image: req.body.image
     };
-    var params = [data.product, data.origin, data['best_before_date'], data.amount, data.image];
-    db.run(`INSERT INTO products (product, origin, best_before_date, amount, image) VALUES (?, ?, ?, ?, ?)`, params, function(err) {
+    var params = [data.author, data.alt, data['tags'], data.description, data.image];
+    db.run(`INSERT INTO notable (author, alt, tags, description, image) VALUES (?, ?, ?, ?, ?)`, [data.author, data.alt, data.tags, data.description, data.image], function(err, params) {
         if (err) {
             return console.error(err.status + err.message);
         }
+        return req.json;
     });
-    console.log(req.body);
-    return res.json(req.body);
 });
 
 
 // ###############################################################################
 // All UPDATE (PUT) functions here
 
-app.put("/productupdate", function(req, res) {
+app.put("/update-notable", function(req, res) {
     var data = {
         id: req.body.id,
-        product: req.body.product,
-        origin: req.body.origin,
-        best_before_date: req.body.best_before_date,
-        amount: req.body.amount,
+        author: req.body.author,
+        alt: req.body.alt,
+        tags: req.body.tags,
+        description: req.body.description,
         image: req.body.image
     };
     db.run(
-        `UPDATE products set 
-           product = COALESCE(?, product), 
-           origin = COALESCE(?, origin), 
-		   best_before_date = COALESCE(?, best_before_date),
-		   amount = COALESCE(?, amount),
-		   image = COALESCE(?, image) 
-           WHERE id = ?`, [data.product, data.origin, data['best_before_date'], data.amount, data.image, data.id],
-        function(err, result) {
-            if (err) {
-                res.status(err.status).json({
-                    "error": res.message
-                })
-                return;
-            }
+        `UPDATE notable SET
+           author = COALESCE(?, author),
+           alt = COALESCE(?, alt),
+           tags = COALESCE(?, tags),
+           description = COALESCE(?, description),
+           image = COALESCE(?, image)
+           WHERE id = ?`, [data.author, data.alt, data.tags, data.description, data.image, data.id],
+        function(err) {
+            if (err) errorMessage(err, res);
             res.json({
                 message: "success",
                 data: data,
                 changes: this.changes
-            })
+            });
+            return res.json;
         });
-})
+});
 
 
 // ###############################################################################
 // All DELETE functions here
 
-app.delete("/productdelete", function(req, res) {
+app.delete("/delete-notable/:id", function(req, res) {
     db.run(
-        'DELETE FROM products WHERE id = ?',
-        req.body.id,
-        function(err, result) {
-            if (err) {
-                res.status(err.status).json({
-                    "error": res.message
-                })
-                return;
-            }
+        'DELETE FROM notable WHERE id = ?',
+        req.params.id,
+        function(err) {
+            if (err) errorMessage(err, res);
             res.json({
                 "message": "deleted",
-                changes: this.changes
-            })
+            });
         });
-})
-
+});
 
 // ###############################################################################
 // This should start the server, after the routes have been defined, at port 3000:
@@ -141,23 +139,23 @@ function my_database(filename) {
         if (err) {
             console.error(err.status + err.message);
         }
-        console.log('Connected to the products database.');
+        console.log('Connected to the notable database.');
     });
     // Create our products table if it does not exist already:
     db.serialize(() => {
         db.run(`
-        	CREATE TABLE IF NOT EXISTS products
+        	CREATE TABLE IF NOT EXISTS notable
         	(id 	  INTEGER PRIMARY KEY,
-        	product	CHAR(100) NOT NULL,
-        	origin 	CHAR(100) NOT NULL,
-        	best_before_date 	CHAR(20) NOT NULL,
-            amount  CHAR(20) NOT NULL,
+        	author	CHAR(100) NOT NULL,
+        	alt 	CHAR(100) NOT NULL,
+        	tags 	CHAR(20) NOT NULL,
+          description  CHAR(2000) NOT NULL,
         	image   CHAR(254) NOT NULL
         	)`);
-        db.all(`select count(*) as count from products`, function(err, result) {
+        db.all(`select count(*) as count from notable`, function(err, result) {
             if (result[0].count == 0) {
-                db.run(`INSERT INTO products (product, origin, best_before_date, amount, image) VALUES (?, ?, ?, ?, ?)`, ["Apples", "The Netherlands", "November 2019", "100kg", "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Apples.jpg/512px-Apples.jpg"]);
-                console.log('Inserted dummy Apples entry into empty product database');
+                db.run(`INSERT INTO notable (author, alt, tags, description, image) VALUES (?, ?, ?, ?, ?)`, ["Grace Hopper", "Image of Grace Hopper at the UNIVAC I console", "programming, linking, navy", "Grace was very curious as a child; this was a lifelong trait. At the age of seven, she decided to determine how an alarm clock worked and dismantled seven alarm clocks before her mother realized what she was doing (she was then limited to one clock)", "https://upload.wikimedia.org/wikipedia/commons/3/37/Grace_Hopper_and_UNIVAC.jpg"]);
+                console.log('Inserted dummy Grace entry into empty notable database');
             } else {
                 console.log("Database already contains", result[0].count, " item(s) at startup.");
             }

@@ -52,17 +52,22 @@
     </table>
     <div id="myModal" class="modal">
       <div class="modalContent">
-        <h3>Here you can submit some information to add to the table</h3>
+        <h3>Here you can submit some information to add to the table<br>
+            To delete, only put in ID</h3>
+        <input type="text" id="id" name="id" placeholder="Use only for UPDATE/DELETE">
         <input type="text" id="author" name="author" placeholder="Albert Einstein" required>
         <input type="text" id="alt" name="alt" placeholder="image of Alber Einstein" required>
         <input type="text" id="description" name="description" placeholder="info of Albert Einstein" required>
         <input type="text" id="tags" name="tags" placeholder="nobel, man, E=MC^2">
         <input type="text" id="image" name="image" placeholder="Link of image">
-        <button type="button" id="poster">Submit</button>
+        <button type="button" id="submit">Submit</button>
+        <button type="button" id="update">Update</button>
+        <button type="button" id="retrieve">Retrieve</button>
+        <button type="button" id="delete">Delete</button>
       </div>
     </div>
     <button type="button" id="modal">Submit</button>
-    <button type="button" class="reset" id="reset">Reset</button>
+    <button type="button" id="reload">Reload</button>
     </div>
   </body>
 

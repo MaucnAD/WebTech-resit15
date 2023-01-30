@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link href="style.css" rel="stylesheet" />
+        <script src="script.js" defer></script>
+        <script
+        src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+        <title>History of Science</title>
+    </head>
+    <body>
+        <h1>Documentation</h1>
+        <nav>
+            <a class="navbutton" href="index.html">Home</a>
+            <a class="navbutton" href="documentation.html" target="_self">Documentation</a>
+        </nav>
+        <section class="center">
+            <h2>Documentation of my api</h2>
+            <div>
+                <h3>Requests</h3>
+            <p>The web API is based on REST principles. Web API uses appropriate HTTP verbs for each action:</p>
+            <table>
+                <tr>
+                    <th>Method</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>GET</td>
+                    <td>Retrieves resources</td>
+                </tr>
+                <tr>
+                    <td>POST</td>
+                    <td>Creates resources</td>
+                </tr>
+                <tr>
+                    <td>PUT</td>
+                    <td>Changes and/or replaces resources</td>
+                </tr>
+                <tr>
+                    <td>DELETE</td>
+                    <td>Deletes resources</td>
+                </tr>
+            </table>
+            <p>There are 2 types of GET, GET (a specific item) or you can GET the full data set.</p>
+            <p><strong>Our products have the following attributes in the database (in ascending order): </strong></p>
+                <ol>
+                    <li><em>author</em></li>
+                    <li><em>alt</em></li>
+                    <li><em>tags</em></li>
+                    <li><em>description</em></li>
+                    <li><em>image</em></li>
+                </ol>
+            <p><strong>These attributes mean the following:</strong></p>
+                <ul>
+                    <li><em>author:</em> the name of the notable person. (string)</li>
+                    <li><em>alt:</em> a description of the image. (string)</li>
+                    <li><em>tags</em> tags that you might associate with the author. (string)</li>
+                    <li><em>description:</em> a description of why the author was notable. (string)</li>
+                    <li><em>image:</em> the url of the image of the product (string)</li>
+                </ul>
+            <br>
+            <table>
+                <tr>
+                    <th>GET (individual product)</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Product ID</td>
+                    <td>Numerical description of the product</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/notable/:id<br>
+                        Here you can input the name of an author to search for them in the table.</td>
+                </tr>
+                <tr>
+                    <td>Possible response codes</td>
+                    <td>
+                        <ul>
+                            <li>200: OK - The request has succeeded. The client can read the result of the request in the body and the headers of the response.</li>
+                            <li>202: Accepted - The request has been accepted for processing, but the processing has not been completed. </li>
+                            <li>204: No Content - The request has succeeded but returns no message body.</li>
+                            <li>404: Not Found - The requested resource could not be found. This error can be due to a temporary or permanent condition.</li>
+                            <li>500: Internal Server Error.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <table>
+                <tr>
+                    <th>GET (everything)</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Product ID</td>
+                    <td>Numerical description of the product</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/notable</td>
+                </tr>
+                <tr>
+                    <td>Possible response codes</td>
+                    <td>
+                        <ul>
+                            <li>200: OK - The request has succeeded. The client can read the result of the request in the body and the headers of the response.</li>
+                            <li>202: Accepted - The request has been accepted for processing, but the processing has not been completed. </li>
+                            <li>204: No Content - The request has succeeded but returns no message body.</li>
+                            <li>404: Not Found - The requested resource could not be found. This error can be due to a temporary or permanent condition.</li>
+                            <li>500: Internal Server Error.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <table>
+                <tr>
+                    <th>POST</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Product ID</td>
+                    <td>Numerical description of the product</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/notable</td>
+                </tr>
+                <tr>
+                    <td>Possible response codes</td>
+                    <td>
+                        <ul>
+                            <li>200: OK - The request has succeeded. The client can read the result of the request in the body and the headers of the response.</li>
+                            <li>201: Created - The request has been fulfilled and resulted in a new resource being created.</li>
+                            <li>202: Accepted - The request has been accepted for processing, but the processing has not been completed. </li>
+                            <li>204: No Content - The request has succeeded but returns no message body.</li>
+                            <li>500: Internal Server Error.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <table>
+                <tr>
+                    <th>PUT</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Product ID</td>
+                    <td>Numerical description of the product</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/update-notable/:id<br>
+                        Here you can update a row in the table by searching  the id.</td>
+                </tr>
+                <tr>
+                    <td>Possible response codes</td>
+                    <td>
+                        <ul>
+                            <li>200: OK - The request has succeeded. The client can read the result of the request in the body and the headers of the response.</li>
+                            <li>202: Accepted - The request has been accepted for processing, but the processing has not been completed. </li>
+                            <li>204: No Content - The request has succeeded but returns no message body.</li>
+                            <li>304: Not Modified</li>
+                            <li>404: Not Found - The requested resource could not be found. This error can be due to a temporary or permanent condition.</li>
+                            <li>500: Internal Server Error.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <table>
+                <tr>
+                    <th>DELETE</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Product ID</td>
+                    <td>Numerical description of the product</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/delete-product/:id<br>
+                        Here you can delete a product associated with its ID.</td>
+                </tr>
+                <tr>
+                    <td>Possible response codes</td>
+                    <td>
+                        <ul>
+                            <li>200: OK - The request has succeeded. The client can read the result of the request in the body and the headers of the response.</li>
+                            <li>202: Accepted - The request has been accepted for processing, but the processing has not been completed. </li>
+                            <li>204: No Content - The request has succeeded but returns no message body.</li>
+                            <li>404: Not Found - The requested resource could not be found. This error can be due to a temporary or permanent condition.</li>
+                            <li>500: Internal Server Error.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+            </div>
+            <div>
+                <h3>Responses</h3>
+            <p>Web API returns all response data as a JSON object.</p>
+        </div>
+        <div>
+            <h3>Response status codes (summary)</h3>
+            <table>
+                <tr>
+                    <th>Status code</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>200</td>
+                    <td>OK - The request has succeeded. The client can read the result of the request in the body and the headers of the response.</td>
+                </tr>
+                <tr>
+                    <td>201</td>
+                    <td>Created - The request has been fulfilled and resulted in a new resource being created.</td>
+                </tr>
+                <tr>
+                    <td>202</td>
+                    <td>Accepted - The request has been accepted for processing, but the processing has not been completed.</td>
+                </tr>
+                <tr>
+                    <td>204</td>
+                    <td>No Content - The request has succeeded but returns no message body.</td>
+                </tr>
+                <tr>
+                    <td>304</td>
+                    <td>Not Modified.</td>
+                </tr>
+                <tr>
+                    <td>400</td>
+                    <td>Bad Request - The request could not be understood by the server due to malformed syntax.</td>
+                </tr>
+                <tr>
+                    <td>403</td>
+                    <td>Forbidden - The server understood the request, but is refusing to fulfill it.</td>
+                </tr>
+                <tr>
+                    <td>404</td>
+                    <td>Not Found - The requested resource could not be found. This error can be due to a temporary or permanent condition.</td>
+                </tr>
+                <tr>
+                    <td>500</td>
+                    <td>Internal Server Error.</td>
+                </tr>
+            </table>
+        </div>
+        </section>
+    </body>
+</html>
